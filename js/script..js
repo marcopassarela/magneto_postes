@@ -1,3 +1,4 @@
+// Rolagem suave para âncoras (mantido)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -10,22 +11,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Hover do menu (mantido)
 const menu = document.querySelector(".menu");
 const hoverBg = document.querySelector(".hover-bg");
-const items = document.querySelectorAll(".menu li");
-
-items.forEach(item => {
-  item.addEventListener("mouseenter", () => {
-    const rect = item.getBoundingClientRect();
-    const parentRect = menu.getBoundingClientRect();
-
-    hoverBg.style.width = `${rect.width}px`;
-    hoverBg.style.transform = `translateX(${rect.left - parentRect.left}px)`;
-    hoverBg.style.opacity = 1; // mostra a barra
-  });
-});
-
-// quando o mouse sair do menu, só muda a opacidade
 menu.addEventListener("mouseleave", () => {
   hoverBg.style.opacity = 0;
+});
+
+// Menu expansível
+const header = document.querySelector('header');
+
+// Ao clicar em qualquer lugar do header, abre o menu
+header.addEventListener('click', (e) => {
+  e.stopPropagation(); // evita que o clique seja interpretado como fora
+  header.classList.add('expanded'); // abre o menu
+});
+
+// Fecha ao clicar fora do header
+document.addEventListener('click', (e) => {
+  if (!header.contains(e.target)) {
+    header.classList.remove('expanded'); // fecha o menu
+  }
 });

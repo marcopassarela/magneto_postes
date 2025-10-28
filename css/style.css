@@ -39,6 +39,9 @@ header {
   color: white;
   font-family: "Roboto Flex", sans-serif;
   font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .hover-bg {
@@ -47,12 +50,72 @@ header {
   left: 0;
   width: 0;
   height: 100%;
-  background: rgba(255, 255, 255, 0.15); /* transparência do vidro */
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px) saturate(180%); /* blur dentro do destaque também */
+  backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   pointer-events: none;
   transition: all 0.3s ease, opacity 0.3s ease;
   opacity: 0; 
+}
+
+.menu a i {
+  display: none;
+}
+
+/* ---------------- MOBILE (300px a 430px) ---------------- */
+@media screen and (max-width: 430px) and (min-width: 300px) {
+  header {
+    width: 60px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    transition: width 0.4s ease;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu a {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: all 0.4s ease; /* transição suave de flex-direction e gap */
+  }
+
+  .menu a span {
+    display: none; /* esconde o texto inicialmente */
+    opacity: 0; /* adiciona opacidade para efeito suave */
+    transition: opacity 0.4s ease; /* transição suave do texto */
+  }
+
+  .menu a i {
+    display: block;
+    font-size: 22px;
+    color: white;
+    transition: color 0.4s ease;
+  }
+
+  /* menu expandido ao clicar */
+  header.expanded {
+    width: 280px; /* largura expandida */
+  }
+
+  header.expanded .menu a {
+    flex-direction: row; /* ícone + texto lado a lado */
+  }
+
+  header.expanded .menu a span {
+    display: inline;
+    opacity: 1; /* texto aparece suavemente */
+  }
 }
