@@ -298,11 +298,12 @@ header {
   .equipe h1 {
     font-size: 15px;
     font-family: "Roboto Flex", sans-serif;
+    font-weight: bold;
   }
   .equipe h3 {
     font-size: 20px;
     font-family: "Roboto Flex", sans-serif;
-    color: blue;
+    color: var(--color-padrão);
   }
   .equipe li {
     font-size: 16px;
