@@ -33,3 +33,14 @@ document.addEventListener('click', (e) => {
     header.classList.remove('expanded'); // fecha o menu
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.fade-up');
+
+  elements.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('show');
+    }, index * 200); // atraso progressivo entre cada item
+  });
+});
+
