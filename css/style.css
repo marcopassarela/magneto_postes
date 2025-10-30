@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+:root {
+  --color-padrão: #3E464D;
+}
 .fade-up {
   opacity: 0;
   transition: opacity 1s ease;
@@ -10,8 +13,6 @@
 .fade-up.show {
   opacity: 1;
 }
-
-
 
 header {
   width: 100%;
@@ -24,18 +25,15 @@ header {
   position: fixed;
   z-index: 9999;
 }
-
 .navbar {
   position: relative;
 }
-
 .menu {
   display: flex;
   gap: 20px;
   list-style: none;
   position: relative;
 }
-
 .menu li {
   position: relative;
   padding: 5px 15px;
@@ -43,7 +41,6 @@ header {
   cursor: pointer;
   transition: color 0.3s ease;
 }
-
 .menu a {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -53,7 +50,6 @@ header {
   align-items: center;
   gap: 10px;
 }
-
 .hover-bg {
   position: absolute;
   top: 0;
@@ -69,7 +65,6 @@ header {
   transition: all 0.3s ease, opacity 0.3s ease;
   opacity: 0; 
 }
-
 .menu a i {
   display: none;
 }
@@ -127,7 +122,7 @@ header {
   display: flex;
   padding: 10px;
 }
-.about   img {
+.about img {
   border-radius: 10px;
 }
 .equipe {
@@ -139,6 +134,13 @@ header {
   flex-direction: column;
   font-family: "Roboto Flex", sans-serif;
   padding: 10px;
+}
+.equipe h1 {
+  color: black;
+}
+.equipe h3 {
+  color: #3E464D;
+  font-weight: bold;
 }
 .equipe li {
   font-size: 16px;
