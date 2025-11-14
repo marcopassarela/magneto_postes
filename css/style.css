@@ -104,7 +104,7 @@ header {
   font-weight: bold;
 }
 /*----------- Conteúdo da página -----------*/
-#page-content {
+#main {
   width: 100%;
   height: 500px;
   display: flex;
@@ -160,6 +160,50 @@ header {
 }
 .btn:hover {
   transform: scale(1.1);
+}
+.content {
+  width: 100%;
+  height: 600px;
+  background-color: rgb(59, 59, 59);
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content h1 {
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto Flex", sans-serif;
+  padding-top: 20px;
+  text-align: center;
+}
+.card1 {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin-top: 40px;
+}
+.card1 h4 {
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto Flex", sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  display: flex;
+  justify-content: center;
+}
+.card1 li {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-family: "Roboto Flex", sans-serif;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -265,7 +309,7 @@ header {
     margin-top: 10px;
     font-weight: bold;
   }
-  #page-content {
+  #main {
     width: auto;
     height: auto;
     margin-left: 50px;
